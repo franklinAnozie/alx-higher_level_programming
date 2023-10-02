@@ -2,18 +2,19 @@
 
 int check_cycle(listint_t *list)
 {
-    listint_t *first = list;
-    listint_t *next = list;
+    listint_t *first_node = list;
+    listint_t *next_node = list;
 
     if (list == NULL)
     {
         return (0);
     }
 
-    while(next && next->next != NULL)
+    while(next_node && next_node->next != NULL)
     {
-        next = next->next;
-        if (first == next)
+        first_node = first_node->next;
+        next_node = next_node->next->next;
+        if (first_node == next_node)
         {
             return (1);
         }
