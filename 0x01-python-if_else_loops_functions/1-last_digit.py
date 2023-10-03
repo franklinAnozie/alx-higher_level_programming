@@ -4,7 +4,7 @@ number = random.randint(-10000, 10000)
 if number < 0:
     num = -1 * number
 last_digit = num % 10
-if num < 0:
+if number < 0:
     last_digit = -1 * last_digit
 text = "Last digit of"
 if last_digit > 5:
