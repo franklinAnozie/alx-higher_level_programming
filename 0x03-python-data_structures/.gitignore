@@ -4,3 +4,4 @@ main.c
 __pycache__
 linked_lists.c
 palindrome
+array_palindrome_check.c

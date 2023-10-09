@@ -1,6 +1,6 @@
 #include "lists.h"
 
-int check_palindrome(int *array_n, int count);
+listint_t *reset_list(listint_t *reset, listint_t *mid);
 
 /**
  * is_palindrome - checks if a linked list is a palindrome
@@ -10,56 +10,67 @@ int check_palindrome(int *array_n, int count);
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *iter;
-	int *array_n;
-	int count = 0, i = 0;
+	listint_t *last = *head, *chaser = *head;
+	listint_t *mid = NULL, *reset = NULL, *second_half = NULL;
+	listint_t *next_node = NULL, *first_half = NULL;
+	int i = 1;
 
 	if (head == NULL)
 	{
-		return (1);
+		return (i);
 	}
-	iter = *head;
-	while (iter != NULL)
+	while (last != NULL && last->next != NULL)
 	{
-		count++;
-		iter = iter->next;
+		reset = chaser;
+		chaser = chaser->next;
+		last = last->next->next;
 	}
-	array_n = malloc(sizeof(int) * count);
-	if (array_n == NULL)
+	if (last != NULL)
 	{
-		return (0);
+		mid = chaser;
+		chaser = chaser->next;
 	}
-	iter = *head;
-	while (i < count)
-	{
-		array_n[i] = iter->n;
-		iter = iter->next;
-		i++;
-	}
-	i = check_palindrome(array_n, count);
 
+	while (chaser != NULL)
+	{
+		next_node = chaser->next;
+		chaser->next = second_half;
+		second_half = chaser;
+		chaser = next_node;
+	}
+	first_half = *head;
+	while (second_half != NULL)
+	{
+		if (first_half->n != second_half->n)
+		{
+			i = 0;
+			return (i);
+		}
+		first_half = first_half->next;
+		second_half = second_half->next;
+	}
+	*head = reset_list(reset, mid);
 	return (i);
 }
 
 /**
- * check_palindrome - checks an arrayof ints is a palindrome
- * @array_n: array to be checked
- * @count: number of elements in the array
- * Return: 1 if it is a palindrome, 0 if it isn't
+ * reset_list - resets list to its initail path
+ * @reset: new head
+ * @mid: continues list from middle
+ * Return: the new head
  */
 
-int check_palindrome(int *array_n, int count)
+listint_t *reset_list(listint_t *reset, listint_t *mid)
 {
-	int i = 0, j = count - 1;
+	listint_t *next_node = NULL;
 
-	while (i < j)
+	reset->next = mid;
+	while (mid != NULL)
 	{
-		if (array_n[i] != array_n[j])
-		{
-			return (0);
-		}
-		i++;
-		j--;
+		next_node = mid->next;
+		mid->next = reset;
+		reset = mid;
+		mid = next_node;
 	}
-	return (1);
+	return (reset);
 }
