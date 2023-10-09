@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	listint_t *next_node = NULL, *first_half = NULL;
 	int i = 1;
 
-	if (head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		return (i);
 	}
