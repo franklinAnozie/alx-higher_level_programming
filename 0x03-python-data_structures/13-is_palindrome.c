@@ -37,7 +37,6 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	i = check_palindrome(array_n, count);
-	free(array_n);
 
 	return (i);
 }
