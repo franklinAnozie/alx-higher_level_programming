@@ -6,9 +6,11 @@
  * Return: void
  */
 
-void print_python_list_info(PyListObject *list)
+void print_python_list_info(PyObject *p)
 {
 	ssize_t i = 0, size, allocated;
+	PyListObject *list;
+	list = (PyListObject *)p;
 
 	size = list->ob_base.ob_size;
 	allocated = list->allocated;
