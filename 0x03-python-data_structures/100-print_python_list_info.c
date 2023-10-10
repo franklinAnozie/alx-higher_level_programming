@@ -19,7 +19,7 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated: %ld\n", allocated);
 	while (i < size)
 	{
-		printf("Element %ld: %s\n", i, list->ob_item[i]->ob_type->tp_name);
+		printf("Element %ld: %s\n", i, Py_TYPE(list->ob_item[i])->tp_name);
 		i++;
 	}
 }
