@@ -5,3 +5,6 @@ __pycache__
 linked_lists.c
 palindrome
 array_palindrome_check.c
+100-test_lists.py
+libPyList.so
+
