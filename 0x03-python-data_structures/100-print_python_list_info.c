@@ -6,11 +6,9 @@
  * Return: void
  */
 
-void print_python_list_info(PyObject *p)
+void print_python_list_info(PyListObject *list)
 {
 	ssize_t i = 0, size, allocated;
-	PyListObject *list;
-	list = (PyListObject *)p;
 
 	size = list->ob_base.ob_size;
 	allocated = list->allocated;
@@ -18,7 +16,7 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated = %ld\n", allocated);
 	while (i < size)
 	{
-		printf("Element %ld: %s\n", i, Py_TYPE(list->ob_item[i])->tp_name);
+		printf("Element %ld: %s\n", i, list->ob_item[i]->ob_type->tp_name);
 		i++;
 	}
 }
