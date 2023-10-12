@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def best_score(a_dictionary):
     biggest_key = None
     if a_dictionary is not None:
