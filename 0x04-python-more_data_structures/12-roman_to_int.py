@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     roman_number = 0
+    prev = ""
     my_dict = {
         "M": 1000,
         "D": 500,
@@ -13,9 +14,15 @@ def roman_to_int(roman_string):
     if roman_string is not None and isinstance(roman_string, str):
         for i in roman_string:
             if i in my_dict:
-                if roman_number != 0 and roman_number < my_dict[i]:
-                    roman_number = my_dict[i] - roman_number
+                if prev != "":
+                    if my_dict[prev] < my_dict[i]:
+                        roman_number = roman_number - 2 + my_dict[i]
+                        prev = i
+                    else:
+                        roman_number += my_dict[i]
+                        prev = i
                 else:
                     roman_number += my_dict[i]
+                    prev = i
 
     return roman_number
