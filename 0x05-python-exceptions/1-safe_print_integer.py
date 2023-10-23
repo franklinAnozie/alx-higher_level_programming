@@ -9,4 +9,4 @@ def safe_print_integer(value):
 
 
 if __name__ == "__main__":
-    safe_print_integer(value)
+    safe_print_integer()
