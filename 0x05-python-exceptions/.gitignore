@@ -3,3 +3,4 @@ main.c
 test.py
 test.c
 test
+__pycache__
