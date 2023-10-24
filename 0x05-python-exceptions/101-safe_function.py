@@ -2,6 +2,7 @@
 
 from sys import stderr
 
+
 def safe_function(fct, *args):
     try:
         return fct(*args)
