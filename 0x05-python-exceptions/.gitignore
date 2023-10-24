@@ -4,3 +4,4 @@ test.py
 test.c
 test
 __pycache__
+libPython.so
