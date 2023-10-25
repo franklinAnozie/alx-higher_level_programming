@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define a class Square that defines a square by: (based on 3-square.py)"""
+"""Define a class Square that defines a square by: (based on 6-square.py)"""
 
 
 class Square(object):
@@ -46,12 +46,28 @@ class Square(object):
         """ Print the square with the character # """
         if self.__size > 0:
             for i in range(self.__position[1]):
-                print("")
+                print()
             for i in range(self.__size):
                 for j in range(self.__position[0]):
-                    print(" ", end="")
+                    print("", end="")
                 for j in range(self.__size):
                     print("#", end="")
                 print()
         else:
             print()
+
+    def __str__(self):
+        """ Return a string representation of the square """
+        string = ""
+        if self.__size > 0:
+            for i in range(self.__position[1]):
+                string += "\n"
+            for i in range(self.__size):
+                for j in range(self.__position[0]):
+                    string += " "
+                for j in range(self.__size):
+                    string += "#"
+                string += "\n"
+        else:
+            string += "\n"
+        return string[:-1]
