@@ -53,7 +53,7 @@ class Rectangle(object):
     @height.setter
     def height(self, value):
         """Sets the height of the instance if value is an integer >= 0"""
-        if isinstance(value, int) is False:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >=0")
@@ -74,9 +74,9 @@ class Rectangle(object):
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Returns the bigger rectangle based on area"""
-        if isinstance(rect_1, Rectangle) is False:
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif isinstance(rect_2, Rectangle) is False:
+        elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         elif rect_1.area() >= rect_2.area():
             return rect_1
