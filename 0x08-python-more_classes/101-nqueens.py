@@ -11,10 +11,9 @@ def nqueens(n):
     Returns:
         list of solutions
     """
-    if not isinstance(n, int):
-        raise TypeError("n must be a number")
     if n < 4:
-        raise ValueError("n must be at least 4")
+        print("N must be at least 4")
+        exit(1)
     board = [[0 for col in range(n)] for row in range(n)]
     solutions = []
     solve(board, 0, solutions)
