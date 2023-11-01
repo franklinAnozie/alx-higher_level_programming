@@ -40,7 +40,7 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError(error[3])
     new_matrix = list(map(lambda x: x.copy(), matrix))
     new_matrix = list(map(lambda row:
-                          list(map(lambda x, div: x / div, row,
+                          list(map(lambda x, div: round(x / div, 2), row,
                                    [div] * len(row))), new_matrix))
     return new_matrix
 
