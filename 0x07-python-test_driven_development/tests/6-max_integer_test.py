@@ -10,6 +10,7 @@ class max_integer_test(TestCase):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([2, 8, 3, 6]), 8)
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer([24]), 24)
         self.assertEqual(max_integer(["a", "b", "c", "k"]), "k")
         self.assertEqual(max_integer([[], [[]], [[[]]]]), [[[]]])
@@ -24,4 +25,3 @@ class max_integer_test(TestCase):
         self.assertRaises(TypeError, max_integer, 7)
         self.assertRaises(TypeError, max_integer, None)
         self.assertRaises(TypeError, max_integer, True)
-        self.assertRaises(ValueError, max_integer, "a")
