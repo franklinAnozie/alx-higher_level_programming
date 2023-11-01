@@ -9,6 +9,7 @@ class max_integer_test(TestCase):
     def test_max(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([2, 8, 3, 6]), 8)
+        self.assertEqual(max_integer([8, 3, 6]), 8)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer(), None)
         self.assertEqual(max_integer([24]), 24)
