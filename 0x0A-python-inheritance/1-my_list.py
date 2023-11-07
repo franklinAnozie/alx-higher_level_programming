@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module contains a function that prints out a sorted list"""
+"""This module contains a function that
+prints out a sorted list"""
 
 
 class MyList(list):
