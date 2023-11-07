@@ -6,9 +6,17 @@ from the specified class ; otherwise False."""
 
 
 def inherits_from(obj, a_class):
-    """returns True if the object is an instance of a class
-    that inherited from the specified class ; otherwise False."""
-    if type(obj) is not a_class and isinstance(obj, a_class):
-        return True
+    """inherits_from
+    checks that obj and a_class are same or share the same superclasss
+
+    Args:
+        obj (object)
+        a_class (class):
+
+    Returns:
+        Boolean: True or False
+    """
+    if type(obj) != a_class:
+        return isinstance(obj, a_class)
     else:
         return False
