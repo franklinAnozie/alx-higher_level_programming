@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" This module is based on task 5-base_geometry.py """
 
 
 class BaseGeometry:
