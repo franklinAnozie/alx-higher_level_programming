@@ -4,6 +4,8 @@ This class is the base of all other classes in this project."""
 
 
 class BaseGeometry:
+    """This class is the base of all other classes in this project."""
+
     def area(self):
         """This method raises an Exception with
         the message area() is not implemented."""
@@ -19,6 +21,7 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """ instantiates a new Rectangle object with width and height. """
     def __init__(self, width, height):
         """ instantiates a new Rectangle object with width and height."""
         self.integer_validator("width", width)
@@ -36,6 +39,7 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """ instantiates a new Square object with size."""
     def __init__(self, size):
         """ instantiates a new Square object with size."""
         self.integer_validator("size", size)
