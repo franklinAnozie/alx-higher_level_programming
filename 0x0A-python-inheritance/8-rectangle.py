@@ -1,30 +1,27 @@
 #!/usr/bin/python3
-"""This module contains a class BaseGeometry.
-This class is the base of all other classes in this project."""
-
-
-class BaseGeometry:
-    """This class is the base of all other classes in this project."""
-    def area(self):
-        """This method raises an Exception with the
-        message area() is not implemented."""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """This method validates the value argument
-        to be a positive integer."""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+"""
+Module containing Class Rectangle that inherits from
+Class BaseGeometry in module "7-base_geometry.py"
+"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """This class inherits from BaseGeometry."""
+    """Rectangle
+    inherits from class BaseGeometry
+
+    Args:
+        BaseGeometry (class): Base class for class Rectangle
+    """
     def __init__(self, width, height):
-        """This method instantiates a new Rectangle
-        object with width and height."""
+        """__init__
+        constructor for class Rectangle
+
+        Args:
+            width (int): width of rectangle object to be created
+            height (int): height of rectangle object to be created
+        """
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
