@@ -2,6 +2,7 @@
 """Module for to_json_string method"""
 from json import dumps
 
+
 def to_json_string(my_obj):
     """returns the JSON representation of an object (string)
     Args:
