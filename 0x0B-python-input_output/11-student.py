@@ -28,7 +28,7 @@ class Student:
                 if i in self.__dict__:
                     new_dict[i] = self.__dict__[i]
             return new_dict
-    
+
     def reload_from_json(self, json):
         """ reload_from_json method
         Args:

@@ -2,6 +2,7 @@
 """ load_from_json_file """
 from json import load
 
+
 def load_from_json_file(filename):
     """ load_from_json_file
     Args:
