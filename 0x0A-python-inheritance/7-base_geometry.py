@@ -4,6 +4,7 @@ This class is the base of all other classes in this project."""
 
 
 class BaseGeometry:
+    """This class is the base of all other classes in this project."""
     def area(self):
         """This method raises an Exception with the
         message area() is not implemented."""
