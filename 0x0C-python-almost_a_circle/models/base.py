@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""
+Module containing class Base
+"""
 from json import dumps, loads
+
 
 class Base(object):
     """
