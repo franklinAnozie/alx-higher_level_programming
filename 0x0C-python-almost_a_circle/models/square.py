@@ -1,73 +1,67 @@
 #!/usr/bin/python3
-"""
-Module containing Square class that inherites from Rectangle
-"""
+""" square.py module: contains class Square """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square
-    Class Square that inherits from Rectangle
-
-    Args:
-        Rectangle (Class): Super class
-    """
+    """class square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """__init__
-        Constructor for class Square
-
+        """
+        init
         Args:
-            size (int): size of square
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (int, optional): id. Defaults to None.
+            size (int): size
+            x (int): x
+            y (int): y
+            id (int): id
         """
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     def __str__(self):
-        """__str__
-        String representation of Square object
-
-        Returns:
-            string: representation of Square object
         """
-        return (f"[Square] ({self.id}) {self.x}/{self.y} "
-                f"- {self.width}")
+        str
+        Returns:
+            str: string representation of Square
+        """
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """size getter
-
-        Returns:
-            int: size of square object
         """
-        return self.__size
+        size
+        Returns:
+            int: size
+        """
+        return self.width
 
     @size.setter
-    def size(self, size):
-        """size setter
-
-        Args:
-            size (int): new size value
+    def size(self, value):
         """
-        self.width = size
-        self.height = self.width
-        self.__size = self.width
+        size setter
+        Args:
+            value (int): value
+        """
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
-        """update
-        update attributes of a square object
         """
-        if len(args) > 0:
-            try:
-                self.id = args[0]
-                self.size = args[1]
-                self.x = args[2]
-                self.y = args[3]
-            except IndexError:
-                pass
-        else:
+        update
+        Args:
+            *args: arguments
+            **kwargs: keyword arguments
+        """
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+        elif kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
@@ -79,15 +73,9 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
-        """to_dictionary
-        genereates representation of a square as dict
-
-        Returns:
-            dict: representation of a square object
         """
-        new_dict = dict()
-        new_dict.update({"id": self.id})
-        new_dict.update({"size": self.size})
-        new_dict.update({"x": self.x})
-        new_dict.update({"y": self.y})
-        return new_dict
+        to_dictionary
+        Returns:
+            dict: dictionary representation of Square
+        """
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
