@@ -4,7 +4,15 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """class square"""
+    """
+    Class Square, inherits from class Base
+
+    Args:
+        Base (class): Parent class
+
+    Returns:
+        object: square object
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """
         init
