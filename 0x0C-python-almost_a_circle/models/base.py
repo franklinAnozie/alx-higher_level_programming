@@ -27,7 +27,7 @@ class Base(object):
             self.id = Base.__nb_objects
         else:
             self.id = id
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """to_json_string
@@ -54,7 +54,7 @@ class Base(object):
             list_objs = []
         with open(cls.__name__ + ".json", "w") as f:
             f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """from_json_string
@@ -68,7 +68,7 @@ class Base(object):
         if json_string is None or len(json_string) == 0:
             return []
         return loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """create
@@ -85,7 +85,7 @@ class Base(object):
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         """load_from_file
@@ -98,7 +98,7 @@ class Base(object):
                 return [cls.create(**obj) for obj in cls.from_json_string(f.read())]
         except:
             return []
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """save_to_file_csv
@@ -152,7 +152,7 @@ class Base(object):
                 turtle.right(90)
                 turtle.forward(rectangle.height)
                 turtle.right(90)
-        
+
         for square in list_squares:
             turtle.penup()
             turtle.goto(randint(-400, 400), randint(-300, 300))
@@ -162,6 +162,5 @@ class Base(object):
             for i in range(4):
                 turtle.forward(square.size)
                 turtle.right(90)
-        
+
         turtle.done()
-  
