@@ -5,7 +5,7 @@ const secondBiggest = () => {
   if (args.length < 4) {
     return minimun;
   } else {
-    minimun = args[2];
+    minimun = parseInt(args[2]);
     for (let i = 3; i < args.length; i++) {
       if (args[i] < minimun) {
         minimun = parseInt(args[i]);
