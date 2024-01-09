@@ -1,12 +1,18 @@
 #!/usr/bin/node
 const secondBiggest = () => {
-  let args = process.argv;
+  const args = process.argv;
+  let newArgs = [];
+  let j = 0;
   let second = 0;
   if (args.length < 4) {
     return second;
   } else {
-    args = args.sort().reverse();
-    second = args[2];
+    for (let i = 2; i < args.length; i++) {
+      newArgs[j] = parseInt(args[i]);
+      j++;
+    }
+    newArgs = newArgs.sort((a, b) => a - b);
+    second = newArgs.reverse()[1];
     return second;
   }
 };
