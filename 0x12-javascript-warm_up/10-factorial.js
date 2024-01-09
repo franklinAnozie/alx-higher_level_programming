@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const factorial = (n) => {
+function factorial(n){
   if (n === 1 || isNaN(n)) {
     return 1;
   }
