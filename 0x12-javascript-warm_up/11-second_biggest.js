@@ -1,17 +1,13 @@
 #!/usr/bin/node
 const secondBiggest = () => {
-  const args = process.argv;
-  let minimun = 0;
+  let args = process.argv;
+  let second = 0;
   if (args.length < 4) {
-    return minimun;
+    return second;
   } else {
-    minimun = parseInt(args[2]);
-    for (let i = 3; i < args.length; i++) {
-      if (args[i] < minimun) {
-        minimun = parseInt(args[i]);
-      }
-    }
-    return minimun;
+    args = args.sort().reverse();
+    second = args[2]; 
+    return second;
   }
 };
 
