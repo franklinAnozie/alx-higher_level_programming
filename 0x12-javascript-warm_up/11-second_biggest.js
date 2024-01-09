@@ -6,7 +6,7 @@ const secondBiggest = () => {
     return second;
   } else {
     args = args.sort().reverse();
-    second = args[2]; 
+    second = args[2];
     return second;
   }
 };
