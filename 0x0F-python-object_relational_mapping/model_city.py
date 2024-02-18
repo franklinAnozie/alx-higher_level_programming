@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""city model"""
 
 
 from sqlalchemy import Column, Integer, String, ForeignKey

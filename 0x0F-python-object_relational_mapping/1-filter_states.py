@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""filter dem boys"""
+"""filter states"""
 
 
 import MySQLdb

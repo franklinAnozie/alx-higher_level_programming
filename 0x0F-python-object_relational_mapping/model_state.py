@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""state model"""
 
 
 from sqlalchemy import Column, Integer, String

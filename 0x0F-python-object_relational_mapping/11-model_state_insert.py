@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""fetch states"""
 
 
 import sqlalchemy as db
