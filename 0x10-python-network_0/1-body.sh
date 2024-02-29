@@ -1,3 +1,3 @@
 #!/bin/bash
-# take in a URL, send a GET req, display the body of the response
+# cURL to the end
 curl -Lfs $1
