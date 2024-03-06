@@ -13,7 +13,9 @@ def get_req(repo, user):
 
     if response.status_code == 200:
         for resp in response.json():
-            print(f"{resp.get('sha')}: {resp.get('commit').get('author').get('name')}")
+            print("{}: {}".format(resp.get('sha'),
+                                  resp.get('commit')
+                                  .get('author').get('name')))
 
 
 if __name__ == "__main__":
