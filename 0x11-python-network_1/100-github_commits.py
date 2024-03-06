@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Technical Interview """
+""" Technical Interview: Get the username and commits to a repo"""
 
 import requests
 import sys
@@ -13,8 +13,7 @@ def get_req(repo, user):
 
     if response.status_code == 200:
         for resp in response.json():
-            print(f"{resp.get('sha')}: {resp.get('commit')
-                                        .get('author').get('name')}")
+            print(f"{resp.get('sha')}: {resp.get('commit').get('author').get('name')}")
 
 
 if __name__ == "__main__":
