@@ -8,7 +8,6 @@ request(args[2], 'utf-8', (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    console.log(body);
     fp.writeFile(args[3], body, 'utf-8', (error) => {
       if (error) {
         console.error(error);
