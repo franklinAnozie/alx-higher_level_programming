@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const readme = require('fs');
 const args = process.argv[2];
