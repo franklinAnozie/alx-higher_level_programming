@@ -13,9 +13,9 @@ request(URL, (error, response, body) => {
     result.forEach((value) => {
       arrOc.push(value.characters);
     });
-    count = count + arrOc.map((characters) => {
+    arrOc.map((characters) => {
       return characters.filter((character) => {
-        return character.includes('/18/');
+        return character.includes('/18/') ? count++ : null;
       });
     });
     console.log(count);
