@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
-const URL = 'https://swapi-api.alx-tools.com/api/films/';
+const args = process.argv;
 
-request(URL, (error, response, body) => {
+request(args[2], (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
